@@ -42,36 +42,48 @@ Questions:
    An open port is a network port actively listening for incoming connections or data. It means a service (like SSH, HTTP, etc.) is running and reachable.
 
 2. How does Nmap perform a TCP SYN scan?
+   
    Nmap sends a SYN packet (like starting a handshake).
    If the target responds with SYN-ACK, the port is open.
    Nmap then sends RST to close it (without completing the handshake).
    Hence, it’s called a stealth (half-open) scan.
 
 3. What risks are associated with open ports?
+   
    Attackers can exploit vulnerabilities in services running on open ports.
    Can be used for unauthorized access, data leaks, or malware infection.
 
+
 4. Difference between TCP and UDP scanning?
+
     Type        Method	              Reliability	              Example
     TCP Scan	  Uses SYN/ACK	        Very reliable	            nmap -sS
     UDP Scan	  Sends UDP packets 	  Less reliable 	          nmap -sU
                 (no handshake)        (no response = ambiguous)
 
+
 5. How can open ports be secured?
+   
    Close unused ports.
    Use firewall rules.
    Implement port knocking or VPN access.
    Regularly patch exposed services.
 
+
 6. What is a firewall’s role regarding ports?
+    
    A firewall controls which ports are open or closed to incoming/outgoing traffic.
    It acts as a barrier between the internal network and external threats.
 
+
 7. What is a port scan and why do attackers perform it?
+    
    A port scan systematically checks which ports on a host are open.
    Attackers perform it to discover vulnerabilities or services they can exploit.
 
+
 8. How does Wireshark complement port scanning?
+    
    Wireshark captures and visualizes packets sent/received during a scan.
    It helps verify:
    How targets respond (SYN-ACK, RST, etc.)
@@ -80,10 +92,13 @@ Questions:
 
 
 **Conclusion**
+
 The local network was successfully scanned using Nmap.
 Only one host (192.168.182.2) had an open DNS port (53/tcp).
 This demonstrates a properly isolated virtual network with minimal exposure and provides foundational experience in network reconnaissance and service enumeration.
 
 *Author: Navya Nandika*
+
 *Environment: Kali Linux (VMware)*
+
 *Date: October 21, 2025*
